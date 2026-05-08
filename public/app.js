@@ -112,7 +112,7 @@ async function loadQuiz() {
     questionEl.innerText = "Loading...";
     choiceTextEls.forEach((el) => (el.innerText = ""));
 
-    const res = await fetch("/api/quiz", {
+    await fetch("/api/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mode, character })
